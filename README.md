@@ -1,4 +1,4 @@
-# yellow-catchImage
+# yellow-CatchImage
 Enables the use of the extension **ImageFilter** also for images on the `blog-start.html`.
 
 Sometimes you want to show specific pictures on the `start-blog.html`. For a portfolio page, for example.
