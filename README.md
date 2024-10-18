@@ -1,6 +1,9 @@
 # yellow-CatchImage
 Enables the use of the extension [ImageFilter](https://github.com/PetersOtto/yellow-ImageFilter) also for images on the `blog-start.html`.
 
+<p align="center"><img src="screenshot-catchimage.png?raw=true" alt="Bildschirmfoto"></p>
+
+## General
 Sometimes you want to show specific pictures on the `start-blog.html`. For a portfolio page, for example.
 If you use my [ImageFilter](https://github.com/PetersOtto/yellow-ImageFilter) extension, you will see that the filters are not applied to these images.
 To change this, I have written this extension. This extension is a plugin/add on for the extension [ImageFilter](https://github.com/PetersOtto/yellow-ImageFilter).
@@ -78,7 +81,8 @@ Now you should customize the layout file (start-blog.html) with css. For example
 }
 
 .entry{
-    width: 50%;
+    width: calc(50% - 0.4rem);
+    padding: 0 0.2rem 0 0.2rem;
     
 }
 ```
