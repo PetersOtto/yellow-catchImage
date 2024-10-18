@@ -9,10 +9,8 @@ class YellowCatchImage
     public function onLoad($yellow)
     {
         $this->yellow = $yellow;
-        $this->yellow->system->setDefault('catchImageDefaultAltText', 'Lesen Sie den Beitrag: ');
+        $this->yellow->system->setDefault('catchImageDefaultAltText', 'Lesen Sie den Beitrag:');
     }
-
-    // Return a blogtag navigation
 
     public function getCatchImage($filenametype, $baseUrl, $catchImageAltText, $catchImageFilter, $catchImageTitle)
     {
@@ -34,10 +32,10 @@ class YellowCatchImage
         $originalType = $splitFilenameType[1];
         $srcOriginal = $this->yellow->lookup->findMediaDirectory('coreImageLocation') . $filenametype;
 
-        if ($originalType == "jpeg" || $originalType == "jpg" || $originalType == "png" || $originalType == "webp") {
-            $supportedType = "1";
-        } else{
-            $supportedType = "0";
+        if ($originalType == 'jpeg' || $originalType == 'jpg' || $originalType == 'png' || $originalType == 'webp') {
+            $supportedType = '1';
+        } else {
+            $supportedType = '0';
         }
 
         if (empty($catchImageFilter)) {
@@ -75,11 +73,11 @@ class YellowCatchImage
             $srcNew = $baseUrl . $this->yellow->system->getHTML('CoreImageLocation') . "$choosedFilter/" . $newFilename . '.' . $originalType;
         }
 
-        if ($supportedType == "0") {
+        if ($supportedType == '0') {
             $newFilename = $originalFilename;
         }
 
-        if ($supportedType == "0") {
+        if ($supportedType == '0') {
             $srcNewInside = $this->yellow->lookup->findMediaDirectory('coreImageLocation') . $newFilename . '.' . $originalType;
             $srcNew = $baseUrl . $this->yellow->system->getHTML('CoreImageLocation') . $newFilename . '.' . $originalType;
         }
@@ -90,28 +88,27 @@ class YellowCatchImage
                 mkdir($pathNewInside);
             }
 
-            if ($isFilterAvailableInternal && $supportedType == "1") {
+            if ($isFilterAvailableInternal && $supportedType == '1') {
                 $this->yellow->extension->get('imagefilter')->generateNewImageInternal($choosedFilter, $srcOriginal, $srcNewInside, $originalType);
             }
 
-            if ($isFilterAvailableExternal && $supportedType == "1") {
+            if ($isFilterAvailableExternal && $supportedType == '1') {
                 $this->yellow->extension->get('imagefilter')->generateNewImageExternal($choosedFilter, $srcOriginal, $srcNewInside, $originalType);
             }
         }
 
-        $output = '<img  src="';
+        $output = '<img class="catchimage" src="';
         $output .= "$srcNew";
         $output .= '" alt="';
         if (empty($catchImageAltText)) {
-            $output .= $this->yellow->system->get('catchImageDefaultAltText') . " " . $catchImageTitle;
+            $output .= $this->yellow->system->get('catchImageDefaultAltText') . ' ' . $catchImageTitle;
         } else {
             $output .= "$catchImageAltText";
         }
         $output .= "\">\n";
 
         return $output;
-    
-}
+    }
 
     public function checkIfFilterIsAvailableInternal($choosedFilter)
     {
