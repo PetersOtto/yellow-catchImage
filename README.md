@@ -69,7 +69,19 @@ Catchimagefilter: imfi-lowsharpen
 ---
 ```
 
-Now you should customize the layout file (start-blog.html) with css.
+Now you should customize the layout file (start-blog.html) with css. For example, you could start with the following code. Put it into the `stockholm.css`. But remember, this is really just a mini example!
+
+```
+.main{
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.entry{
+    width: 50%;
+    
+}
+```
 
 ## Developer
 PetersOtto. [Get help](https://datenstrom.se/yellow/help/)
