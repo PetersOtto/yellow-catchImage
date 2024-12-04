@@ -1,4 +1,10 @@
 <?php
+// The extension is named »CatchImage« because these images should catch the user and bring them to the post.
+// Datenstrom Yellow shows the title of the post and a small excerpt of the post on the start page of the blog »start-blog.html«.
+// If you want to create a portfolio page, you often need an image on the start page of the blog »start-blog.html«.
+// This can be implemented with »CatchImage«. In addition, the full range of functions of »ImageFilter« can be used. 
+// ImageFilter extension is required. 
+
 class YellowCatchImage
 {
     const VERSION = '0.9.4';
@@ -23,7 +29,7 @@ class YellowCatchImage
         // Check if »webp« should use
         $useWebp = $this->yellow->system->get('imageFilterUseWebp');
 
-        // Get image width and height.
+        // Get image width and height
         list($width, $height, $type, $widthAndHeight) = getimagesize($srcOriginal);
     
         // Split filename into name and type
@@ -159,7 +165,7 @@ class YellowCatchImage
         return $isFilterAvailable;
     }
 
-    // Check if filter is available in »imagefilter.php 
+    // Check if filter is available in »imagefilter.php« 
     public function checkIfFilterDefaultIsAvailable($toCheckFilter)
     {
         $isFilterCatchAvailableExternal = $this->checkIfFilterIsAvailableExternal($toCheckFilter); 
@@ -173,7 +179,7 @@ class YellowCatchImage
         return $isFilterAvailable;
     }
 
-    // Check if the extension »imageFillter« exist and if filter is available in »imagefilter.php«
+    // Check if the extension »imageFilter« exist and if filter is available in »imagefilter.php«
     public function checkIfFilterIsAvailableInternal($toCheckFilter)
     {
         if ($this->yellow->extension->isExisting('imagefilter')) {
