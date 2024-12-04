@@ -16,6 +16,9 @@ If you need images on your »blog-start.html«, have a look to the Yellow »Catc
 * https://developers.google.com/speed/webp?hl=en
 * https://forum.getkirby.com/t/media-webp-files-shown-as-plain-text/30315/7
 
+----
+----
+
 ## ImageFilter
 
 With »ImageFilter« it is possible to apply image filters to the images on the website. The original image will not be change. New images are created and stored in subfolders. A default filter can be specified in the »yellow-system.ini«
