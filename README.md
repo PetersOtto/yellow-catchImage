@@ -8,10 +8,35 @@ Enable the use of [ImageFilter](https://github.com/PetersOtto/yellow-ImageFilter
 The extension is named »CatchImage« because these images should catch the user and bring them to the post.
 
 Datenstrom Yellow shows the title of the post and a small excerpt of the post on the start page of the blog »start-blog.html«.
-If you want to create a portfolio page, you often need an image on the start page of the blog »start-blog.html«.
+If you want to create a portfolio page, you often need a specific image on the start page of the blog »start-blog.html«.
 This can be implemented with »CatchImage«. In addition, the full range of functions of »ImageFilter« can be used. 
 
 [ImageFilter](https://github.com/PetersOtto/yellow-ImageFilter) is required.
+
+### Alternative
+
+If only the first image of the post is to be displayed and no specific image, then the following code in `start-blog.html` is enough:
+
+```
+<?php 
+$fullContent = $page->getContentHtml();
+preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $fullContent, $src);
+preg_match('/<img.+alt=[\'"](?P<alt>.+?)[\'"].*>/i', $fullContent, $alt);
+preg_match('/<img.+width=[\'"](?P<width>.+?)[\'"].*>/i', $fullContent, $width);
+preg_match('/<img.+height=[\'"](?P<height>.+?)[\'"].*>/i', $fullContent, $height);
+$srcToFirstImageOfPost = $src['src'] ?? '';
+$altFromFirstImageOfPost = $alt['alt'] ?? '';
+$widthFromFirstImageOfPost = $width['width'] ?? '';
+$heightFromFirstImageOfPost = $height['height'] ?? '';    
+?> 
+<?php if ($srcToFirstImageOfPost == ''): ?>
+<div><h1>No image file available in the post!</h1></div>
+<?php else: ?>
+<a href="<?php echo $page->getLocation(true) ?>"><img src="<?php echo $srcToFirstImageOfPost ?>" width="<?php echo $widthFromFirstImageOfPost ?>" height="<?php echo $heightFromFirstImageOfPost ?>" alt="<?php echo $altFromFirstImageOfPost ?>"></a>
+<?php endif ?>
+
+```
+
 
 ### How to use
 
