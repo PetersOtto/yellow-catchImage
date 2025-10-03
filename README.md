@@ -1,5 +1,5 @@
 # yellow-CatchImage
-Enable the use of [ImageFilter](https://github.com/PetersOtto/yellow-ImageFilter) also for images on the `start-blog.html`.
+Enable the use of [ImageFilter](https://github.com/PetersOtto/yellow-ImageFilter) also for images on the `blog-start.html`.
 
 <p align="center"><img src="screenshot-catchimage.png?raw=true" alt="Bildschirmfoto"></p>
 
@@ -7,15 +7,15 @@ Enable the use of [ImageFilter](https://github.com/PetersOtto/yellow-ImageFilter
 
 The extension is named »CatchImage« because these images should catch the user and bring them to the post.
 
-Datenstrom Yellow shows the title of the post and a small excerpt of the post on the start page of the blog »start-blog.html«.
-If you want to create a portfolio page, you often need a specific image on the start page of the blog »start-blog.html«.
+Datenstrom Yellow shows the title of the post and a small excerpt of the post on the start page of the blog »blog-start.html«.
+If you want to create a portfolio page, you often need a specific image on the start page of the blog »blog-start.html«.
 This can be implemented with »CatchImage«. In addition, the full range of functions of »ImageFilter« can be used. 
 
 [ImageFilter](https://github.com/PetersOtto/yellow-ImageFilter) is required.
 
 ### Alternative
 
-If only the first image of the post is to be displayed and no specific image, then the following code in `start-blog.html` is enough:
+If only the first image of the post is to be displayed and no specific image, then the following code in `blog-start.html` is enough:
 
 ```
 <?php 
@@ -40,8 +40,8 @@ $heightFromFirstImageOfPost = $height['height'] ?? '';
 
 ### How to use
 
-You should customize the layout file `start-blog.html` with css after installation. Basic css knowledge is required.  
-In the easiest case change the code of your `start-blog.html` like the following example. Insert the following code where the images should appear: 
+You should customize the layout file `blog-start.html` with css after installation. Basic css knowledge is required.  
+In the easiest case change the code of your `blog-start.html` like the following example. Insert the following code where the images should appear: 
 
 ```
 <?php 
@@ -95,7 +95,7 @@ Catchimagefilter: imfi-lowsharpen
 ---
 ```
 
-Now you should customize the layout file (start-blog.html) with css. For example, you could start with the following code. Put it into the `stockholm.css`. But remember, this is really just a mini example!
+Now you should customize the layout file (blog-start.html) with css. For example, you could start with the following code. Put it into the `stockholm.css`. But remember, this is really just a mini example!
 
 ```
 .main{
