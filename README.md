@@ -1,5 +1,5 @@
 # yellow-CatchImage
-Enable the use of [ImageFilter](https://github.com/PetersOtto/yellow-ImageFilter) also for images on the `blog-start.html`.
+Enable the use of [ImageFilter](https://github.com/PetersOtto/yellow-ImageFilter) also for images on the `start-blog.html`.
 
 <p align="center"><img src="screenshot-catchimage.png?raw=true" alt="Bildschirmfoto"></p>
 
